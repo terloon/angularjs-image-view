@@ -17,7 +17,6 @@
                     if (isNaN(ratioW) || isNaN(ratioH)) return;
 
                     var pad = ((ratioH / ratioW) * 100).toFixed(2);
-                    console.log('pad = ' + pad);
                     var img = angular.element('<img />');
 
                     var center = function() {
