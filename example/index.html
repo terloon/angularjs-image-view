@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Zerve</title>
+    <title>angular-image-view</title>
     <style>
     body {
         margin: 0;
@@ -23,9 +23,9 @@
 </head>
 <body ng-app="myApp" ng-controller="MyCtrl">
 <div class="img-container">
-    <div class="frame"><div img-src="img/1.jpg" fade-in="1s" ratio="4:3"></div></div>
-    <div class="frame"><div img-src="img/2.jpg" fade-in="1s" ratio="16:9"></div></div>
-    <div class="frame"><div img-src="img/3.jpg" fade-in="1s" ratio="1:1"></div></div>
+    <div class="frame"><div img-src="img/1.jpg" fade-in="1" aspect-ratio="4:3"></div></div>
+    <div class="frame"><div img-src="img/2.jpg" fade-in="2" aspect-ratio="16:9"></div></div>
+    <div class="frame"><div img-src="img/3.jpg" aspect-ratio="1:1"></div></div>
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
 <script src="../../js/image-widgets.js"></script>

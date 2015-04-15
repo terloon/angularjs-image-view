@@ -7,8 +7,8 @@
                     imgSrc: '@'
                 },
                 link: function(scope, element, attrs) {
-                    if (!angular.isDefined(attrs.ratio)) attrs.ratio = '0:0';
-                    var ratioVals = attrs.ratio.split(':');
+                    if (!angular.isDefined(attrs.aspectRatio)) attrs.aspectRatio = '0:0';
+                    var ratioVals = attrs.aspectRatio.split(':');
 
                     if (ratioVals.length != 2) return;
                     var ratioW = parseInt(ratioVals[0]);
@@ -57,15 +57,18 @@
                     angular.element(element).css(elementCss);
 
                     if (angular.isDefined(attrs.fadeIn)) {
-                        imgCss['-webkit-transition'] = 'opacity 0.5s ease-in';
-                        imgCss['-moz-transition'] = 'opacity 0.5s ease-in';
-                        imgCss['-ms-transition'] = 'opacity 0.5s ease-in';
-                        imgCss['-o-transition'] = 'opacity 0.5s ease-in';
-                        imgCss['transition'] = 'opacity 0.5s ease-in';
+                        var fadeIn = parseFloat(attrs.fadeIn);
+                        if (!isNaN(fadeIn)) {
+                            fadeIn = fadeIn.toFixed(2);
+                            imgCss['-webkit-transition'] = 'opacity ' + fadeIn + 's ease-in';
+                            imgCss['-moz-transition'] = 'opacity ' + fadeIn + 's ease-in';
+                            imgCss['-ms-transition'] = 'opacity ' + fadeIn + 's ease-in';
+                            imgCss['-o-transition'] = 'opacity ' + fadeIn + 's ease-in';
+                            imgCss['transition'] = 'opacity ' + fadeIn + 's ease-in';
+                        }
                     }
 
                     img.css(imgCss);
-
                     img.attr('src', scope.imgSrc);
 
                     img.on('load', function() {
