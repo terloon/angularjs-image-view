@@ -6,7 +6,7 @@ This is an angular directive used to display images with some nice attributes us
 Currently images are lazy loaded. Example:
 
 ```
-<div img-src="the-image.jpg" ratio="4:3" fade-in="2s"></div>
+<div img-src="the-image.jpg" ratio="4:3" fade-in="2"></div>
 ```
 
 * **aspect-ratio** - Control the aspect-ratio of the image to be displayed. Values like, "4:3", "16:9", "1:1". If no ratio is given, it will be the size of the image.
